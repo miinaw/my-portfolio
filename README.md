@@ -1,4 +1,5 @@
 # my-portfolio
+Vue + Vue CLI + Netlify
 
 ## Project setup
 ```
