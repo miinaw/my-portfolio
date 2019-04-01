@@ -4,7 +4,7 @@
       <div class="OpenMenuButton humberger" :class="{ 'is-active': openMenu }" @click="openMenu = !openMenu">
         <span class="humberger-button"></span>
       </div>
-      <div class="header-logo">Minami's portfolio</div>
+      <div class="header-logo"><a href="/">Minami's portfolio</a></div>
       <div></div>
     </div>
     <transition name="menu">

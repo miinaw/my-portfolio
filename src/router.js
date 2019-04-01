@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 import Index from './pages/Index.vue'
+import About from './pages/About.vue'
 import GithubRepository from './pages/GithubRepository.vue'
 
 export default new VueRouter({
@@ -14,8 +15,12 @@ export default new VueRouter({
       component: Index,
     },
     {
-      path: '/git',
+      path: '/about',
+      component: About
+    },
+    {
+      path: '/github',
       component: GithubRepository
-    }
+    },
   ]
 })

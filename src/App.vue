@@ -2,7 +2,6 @@
   <div id="app">
     <Header/>
     <div class="content">
-      <img class="logo" alt="logo" src="./assets/images/logo.jpg">
       <router-link to="/"></router-link>
 
       <router-view></router-view>
@@ -48,7 +47,13 @@ h1, h2, h3, h4, h5, h6 {
 input {
   border-radius: 0;
 }
-
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.content {
+  margin: 0 4vw;
+}
 .logo {
   width: 7rem;
   height: 7rem;

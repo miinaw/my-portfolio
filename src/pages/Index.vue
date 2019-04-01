@@ -1,8 +1,8 @@
 <template>
-  <div class="content">
+  <div class="page index">
+    <img class="logo" alt="logo" src="../assets/images/logo.jpg">
     <Title title="My portfolio"/>
     <MenuBox/>
-    <!-- <router-link to="/git">github</router-link> -->
     <router-view></router-view>
   </div>
 </template>

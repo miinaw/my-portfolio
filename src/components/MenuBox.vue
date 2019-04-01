@@ -1,7 +1,7 @@
 <template>
   <div class="menu-box">
     <ul class="menu-list">
-      <li v-for="menu in menulist" :key="menu.id" class="menu-list-item"><a v-bind:href="menu.path"><router-link v-vind:to="'/' + { params : menu.name }">{{ menu.name }}</router-link></a></li>
+      <li v-for="menu in menulist" :key="menu.id" class="menu-list-item"><router-link v-bind:to="'/' +  menu.name">{{ menu.name }}</router-link></li>
     </ul>
   </div>
 </template>
@@ -15,17 +15,18 @@ export default {
         { 
           id: 0,
           name: "about",
-          path: ""
          },
         { 
           id: 1,
-          name: "git",
-          path: ""
+          name: "github",
+         },
+         {
+           id: 2,
+           name: "qiita"
          },
         { 
-          id: 2,
+          id: 3,
           name: "contact",
-          path: ""
          },
       ]
     }
