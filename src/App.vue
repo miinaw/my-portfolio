@@ -3,9 +3,7 @@
     <Header/>
     <div class="content">
       <img class="logo" alt="logo" src="./assets/images/logo.jpg">
-      <Title title="My portfolio"/>
-      <MenuBox/>
-      <router-link to="/git">github</router-link>
+      <router-link to="/"></router-link>
 
       <router-view></router-view>
     </div>
@@ -15,16 +13,11 @@
 <script>
 import 'normalize.css'
 import Header from './components/Header.vue'
-import Title from './components/Title.vue'
-import MenuBox from './components/MenuBox.vue'
-
 
 export default {
   name: 'app',
   components: {
     Header,
-    Title,
-    MenuBox
   },
 }
 </script>
