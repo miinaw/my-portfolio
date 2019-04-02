@@ -21,7 +21,7 @@ import VueResource from 'vue-resource'
 import GitHubAPI from 'vue-github-api'
 
 Vue.use(VueResource)
-Vue.use(GitHubAPI, { token: '' })
+Vue.use(GitHubAPI, { token: process.env.VUE_APP_GIT_ACCESS_TOKEN })
 
 export default {
   name: 'Github',
