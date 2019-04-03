@@ -52,9 +52,6 @@ export default {
 
 <style lang="scss" scoped>
 
-.page-content {
-   margin: 1rem 0;
-}
 .repository-list {
    border: 1px solid #ddd;
    & + li {
