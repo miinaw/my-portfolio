@@ -1,9 +1,7 @@
 <template>
   <div class="firstview">
     <h1>{{ title }}</h1>
-    <p>
-      My name is Minami Yokoyama.
-    </p>
+    <p>{{ description }}</p>
   </div>
 </template>
 
@@ -11,7 +9,8 @@
 export default {
   name: 'title',
   props: {
-    title: String
+    title: String,
+    description: String,
   }
 }
 </script>
