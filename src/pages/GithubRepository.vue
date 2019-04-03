@@ -3,7 +3,7 @@
     <Title title="My github Repositories."/>
     <div class="page-content">
       <ul>
-        <li  v-for="item in repositoriesCount" :key="item.key" class="repository-list">
+        <li v-for="item in repositoriesCount" :key="item.key" class="repository-list">
            <h3><a v-bind:href="item.git_url">{{ item.name }}</a></h3>
            <p>{{ item.description }}</p>
            <p>{{ item.language }}</p>
