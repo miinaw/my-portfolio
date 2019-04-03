@@ -1,6 +1,6 @@
 <template>
   <div class="page qiita">
-    <Title title="My Qiita items."/>
+    <Title title="My Qiita posts." description=""/>
     <div class="page-content">
       <div>
         <a 
@@ -9,9 +9,13 @@
         target="_blank"
         class="post-list"
         >
-          <div>{{ post.title }}</div>
-          <div>{{ post.likes_count }}</div>
-          <div li v-for="tag in post.tags" :key="tag.key">{{ tag.name }}</div>
+          <div class="title">{{ post.title }}</div>
+          <div class="info">
+            <div class="likes">{{ post.likes_count }}</div>
+            <div class="tags">
+              <div v-for="tag in post.tags" :key="tag.key" class="tag">{{ tag.name }}</div>
+            </div>
+          </div>
         </a>
       </div>
    </div>
@@ -36,8 +40,7 @@ export default {
     getPost() {
       axios.get('https://qiita.com/api/v2/users/miiina016/items')
       .then(response => (this.posts = response.data))
-      console.logres(this.posts.length)
-    },
+    }
   },
   created () {
     this.getPost()
@@ -49,9 +52,40 @@ export default {
 
 .post-list {
   display: block;
+  padding: 1.2rem 1rem;
   border: 1px solid #ddd;
   & + .post-list {
     margin-top: 1rem;
   }
 }
+.title {
+  margin-bottom: 1.4rem;
+  text-align: left;
+  font-size: 1rem; 
+  font-weight: bold;
+  color: #55c500
+}
+.info {
+  display: flex;
+  justify-content: space-between;
+  font-size: .8rem;
+  .likes::before {
+    display: inline-block;
+    width: .8rem;
+    height: .8rem;
+    margin-right: .3rem;
+    background-image: url('../assets/images/icons/good.svg');
+    content: '';
+  }
+  .tags {
+    display: flex;
+    .tag::before {
+      content: '#';
+    }
+    .tag + .tag {
+      margin-left: .3rem;
+    }
+  }
+}
+
 </style>
