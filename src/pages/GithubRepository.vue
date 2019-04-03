@@ -53,9 +53,10 @@ export default {
 <style lang="scss" scoped>
 
 .repository-list {
-   border: 1px solid #ddd;
-   & + li {
-      margin-top: 1rem;
-   }
+  padding: 1.2rem 1rem;
+  border: 1px solid #ddd;
+  & + li {
+    margin-top: 1rem;
+  }
 }
 </style>
