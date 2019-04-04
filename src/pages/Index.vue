@@ -20,8 +20,9 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .index /deep/ .menu-box {
+  margin: 2rem 0;
   .menu-list-item {
     color: #666;
   }
