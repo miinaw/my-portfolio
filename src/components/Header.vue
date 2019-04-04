@@ -129,16 +129,39 @@ export default {
 .header /deep/ .menu-box {
   margin: 0;
   .menu-list {
-    padding: 2rem;
+    padding: 2rem 1.4rem;
     text-align: left;
   }
   .menu-list-item {
-    color: #333;    
+    display: flex;
+    color: #2c3e50;    
     font-weight: normal;
     font-size: 1.4rem;
     & + li {
       margin-top: 1rem;
     }
+    &::before {
+      display: block;
+      margin: auto .3rem auto 0;
+      width: 1.2rem;
+      height: 1.2rem;
+      background-size: contain;
+      background-repeat: no-repeat;
+      content: '';
+    }
+    &.about::before {
+      background-image: url('../assets/images/icons/face.svg');
+    }
+    &.github::before {
+      background-image: url('../assets/images/icons/github.svg');
+    }
+    &.qiita::before {
+      background-image: url('../assets/images/icons/qiita.svg');
+    }
+    &.contact::before {
+      background-image: url('../assets/images/icons/mail.svg');
+    }
+    
   }
 }
 

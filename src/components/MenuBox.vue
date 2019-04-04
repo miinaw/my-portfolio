@@ -1,7 +1,7 @@
 <template>
   <div class="menu-box">
     <ul class="menu-list">
-      <li v-for="menu in menulist" :key="menu.id" class="menu-list-item"><router-link v-bind:to="'/' +  menu.name">{{ menu.name }}</router-link></li>
+      <li v-for="menu in menulist" :key="menu.id" :class="menu.name" class="menu-list-item"><router-link v-bind:to="'/' +  menu.name">{{ menu.name }}</router-link></li>
     </ul>
   </div>
 </template>
