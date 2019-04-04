@@ -54,6 +54,8 @@ export default {
   display: block;
   padding: 1.2rem 1rem;
   border: 1px solid #ddd;
+  background-color: #f6f6f6;
+  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.04);
   & + .post-list {
     margin-top: 1rem;
   }

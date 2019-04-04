@@ -59,6 +59,8 @@ export default {
   display: block;
   padding: 1.2rem 1rem;
   border: 1px solid #ddd;
+  background-color: #f6f6f6;
+  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.04);
   & + .repository-list {
     margin-top: 1rem;
   }
@@ -68,6 +70,9 @@ export default {
   font-size: 1.1rem; 
   font-weight: bold;
   color: #0366d6
+}
+.description {
+  font-size: .9rem;
 }
 .title,.description {
   margin-bottom: 1rem;
