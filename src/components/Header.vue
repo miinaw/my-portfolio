@@ -136,15 +136,15 @@ export default {
     display: flex;
     color: #2c3e50;    
     font-weight: normal;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     & + li {
       margin-top: 1rem;
     }
     &::before {
       display: block;
       margin: auto .3rem auto 0;
-      width: 1.2rem;
-      height: 1.2rem;
+      width: 1.4rem;
+      height: 1.4rem;
       background-size: contain;
       background-repeat: no-repeat;
       content: '';
