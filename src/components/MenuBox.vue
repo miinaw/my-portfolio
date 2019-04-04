@@ -34,18 +34,21 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .menu-box {
   margin: 2rem 0;
 }
-li {
-  margin: 1rem 0;
+.menu-list-item {
   font-size: 2rem;
   font-weight: 500;
-  color: #666;
+  & + .menu-list-item {
+    margin-top: 1rem;
+  }
 }
 a {
   text-decoration: none;
+}
+.page.index /deep/ .menu-list-item {
   color: #666;
 }
 </style>
