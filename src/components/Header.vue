@@ -11,10 +11,7 @@
     <div class="humberger-wrap" v-show="openMenu" @click="openMenu = !openMenu">
       <div class="humberger-menu">
         <ul class="menulist">
-          <li>about</li>
-          <li>github</li>
-          <li>contact</li>
-          <li>about</li>
+          <MenuBox/>
         </ul>
       </div>
     </div>
@@ -24,8 +21,13 @@
 </template>
 
 <script>
+import MenuBox from './MenuBox.vue'
+
 export default {
   name: 'Header',
+  components: {
+    MenuBox
+  },
   data() {
     return { openMenu: false }
   }
@@ -110,6 +112,17 @@ export default {
     width: 88vw;
     height: 100vh;
     background-color: #ddd;
+  }
+  .menu-list {
+    padding: 2rem;
+    text-align: left;
+  }
+  .menu-list-item {
+    font-weight: normal;
+    font-size: 1.8rem;
+    & + li {
+      margin-top: .8rem;
+    }
   }
 }
 .menulist {
