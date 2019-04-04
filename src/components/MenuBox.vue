@@ -39,7 +39,7 @@ export default {
   margin: 2rem 0;
 }
 .menu-list-item {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 500;
   & + .menu-list-item {
     margin-top: 1rem;

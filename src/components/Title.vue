@@ -1,5 +1,5 @@
 <template>
-  <div class="firstview">
+  <div class="title-block">
     <h1>{{ title }}</h1>
     <p>{{ description }}</p>
   </div>
@@ -19,15 +19,7 @@ export default {
 h1 {
   margin: 1rem 0;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+.title-block {
+  margin-bottom: 1rem;
 }
 </style>
