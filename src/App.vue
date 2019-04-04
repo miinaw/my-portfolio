@@ -54,6 +54,9 @@ a {
 .content {
   margin: 0 4vw;
 }
+.page-content {
+   margin: 1rem 0;
+}
 .logo {
   width: 7rem;
   height: 7rem;

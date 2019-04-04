@@ -20,9 +20,8 @@ export default {
 }
 </script>
 
-<style>
-.page-content {
-   margin: 1rem 0;
-}
+<style lang="scss" scoped>
 </style>
+
+
 
