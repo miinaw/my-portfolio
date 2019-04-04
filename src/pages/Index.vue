@@ -20,7 +20,12 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+.index /deep/ .menu-box {
+  .menu-list-item {
+    color: #666;
+  }
+}
 </style>
 
 

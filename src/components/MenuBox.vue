@@ -48,7 +48,5 @@ export default {
 a {
   text-decoration: none;
 }
-.page.index /deep/ .menu-list-item {
-  color: #666;
-}
+
 </style>

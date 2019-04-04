@@ -113,27 +113,6 @@ export default {
     height: 100vh;
     background-color: #ddd;
   }
-  .menu-list {
-    padding: 2rem;
-    text-align: left;
-  }
-  .menu-list-item {
-    font-weight: normal;
-    font-size: 1.8rem;
-    & + li {
-      margin-top: .8rem;
-    }
-  }
-}
-.menulist {
-  padding: 2rem;
-  text-align: left;
-  li {
-    font-size: 1.8rem;
-    & + li {
-      margin-top: .8rem;
-    }
-  }
 }
 .menu-enter-active {
   animation-name: RightToLeft;
@@ -145,6 +124,24 @@ export default {
   animation-duration: .3s;
   opacity: 1;
 }
+
+// MenuBox
+.header /deep/ .menu-box {
+  margin: 0;
+  .menu-list {
+    padding: 2rem;
+    text-align: left;
+  }
+  .menu-list-item {
+    color: #333;    
+    font-weight: normal;
+    font-size: 1.4rem;
+    & + li {
+      margin-top: 1rem;
+    }
+  }
+}
+
 
 // animation
 @keyframes RightToLeft {
