@@ -7,6 +7,7 @@ import Index from './pages/Index.vue'
 import About from './pages/About.vue'
 import GithubRepository from './pages/GithubRepository.vue'
 import Qiita from './pages/Qiita.vue'
+import Contact from './pages/Contact.vue'
 
 export default new VueRouter({
   mode: 'history',
@@ -26,6 +27,10 @@ export default new VueRouter({
     {
       path: '/qiita',
       component: Qiita
+    },
+    {
+      path: '/contact',
+      component: Contact
     },
   ]
 })
