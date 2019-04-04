@@ -1,6 +1,8 @@
 <template>
   <div class="page index">
-    <img class="logo" alt="logo" src="../assets/images/logo.jpg">
+    <a href="/">
+      <img class="logo" alt="logo" src="../assets/images/logo.jpg">
+    </a>
     <Title title="My portfolio" description="My name is Minami Yokoyama."/>
     <MenuBox/>
     <router-view></router-view>
