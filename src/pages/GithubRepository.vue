@@ -1,11 +1,15 @@
 <template>
   <div class="page github">
+    <a v-bind:href="MyPageData.html_url" target="_blank">
+      <img class="logo" alt="logo" v-bind:src="MyPageData.avatar_url">
+    </a>
     <Title title="My github Repositories."/>
     <div class="page-content">
       <div>
         <a 
         v-for="item in repositoriesCount" :key="item.key" 
         v-bind:href="item.git_url"
+        target="_blank"
         class="repository-list"
         >
           <div class="title">{{ item.name }}</div>
@@ -37,10 +41,12 @@ export default {
   data() {
      return {
       GithubData: {},
+      AccountData: {},
      }
   },
   mounted: function () {
     this.GitHubAPI.get('/user/repos', {}, [this.GithubData, 'repositories'])
+    this.GitHubAPI.get('/user', {}, [this.AccountData, 'mypage'])
   },
   computed: {
     repositoriesCount: function () {
@@ -48,6 +54,12 @@ export default {
         return this.GithubData.repositories
       }
       return 'none yet...'
+    },
+    MyPageData: function () {
+      if(this.AccountData.mypage) {
+        return this.AccountData.mypage
+      }
+      return "../assets/images/logo.jpg"
     }
   },
 };

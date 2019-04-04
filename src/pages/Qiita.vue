@@ -1,5 +1,8 @@
 <template>
   <div class="page qiita">
+    <a href="https://qiita.com/miiina016" target="_blank">
+      <img class="logo" alt="logo" src="https://qiita-image-store.s3.amazonaws.com/0/263845/profile-images/1543141905">
+    </a>
     <Title title="My Qiita posts." description=""/>
     <div class="page-content">
       <div>
