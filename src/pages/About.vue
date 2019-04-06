@@ -14,7 +14,10 @@
         <p>宮崎県出身</p>
         <p>宮崎大学工学部 情報システム工学科 2018年卒</p>
         <p>株式会社アラタナに新卒入社(フロントエンドエンジニア)</p>
+        <p>使用しているエディターはVS Code</p>
+        <p>使用しているメモアプリはBoostnote</p>
         <p>好きなたべものはチョコレート(よく食べるのはブラックサンダーゴールドとチロルチョコのミルク)</p>
+        <p>好きな場所は海</p>
         <p>好きな動物は猫</p>
       </div>
       
@@ -28,7 +31,10 @@
         <p>大学の卒業研究では筋電位や脳波を用いた生体認証の研究を行う。</p>
         <p>大学時代は経験のため、株式会社アダストリアのブランドでの販売や、地元テレビ局でFDをアルバイトとして3年ほど務める。</p>
         <p>IT業界やアパレル業界に興味をもっていたこともあり、株式会社アラタナに入社し、フロントエンドエンジニアに配属される。</p>
-        <p>主にZOZOTOWN取扱いブランドの自社ECサイトのフロント部分の実装を行う。</p>
+        <p>研修期間にwordpressで「アラタナ24h」という会社のブログをリニューアル。その後、ECサイトで扱うFAQサイトを実装。機能はwordpressプラグインとして導入。</p>
+        <p>本配属後は主にZOZOTOWN取扱いブランドの自社ECサイトのフロント部分の実装を行う。</p>
+        <p>プロダクト内でのCSS設計手法はITCSSで、SCSSを使用。ビルドツールはwebpack。</p>
+        <p>現在はVueやNuxtを使った開発にも携わっている。</p>
       </div>
       
       <div class="heading">
@@ -66,7 +72,7 @@ export default {
   methods: {
     getPost() {
       var access_token = process.env.VUE_APP_INSTAGRAM_ACCESS_TOKEN
-      axios.get('https://api.instagram.com/v1/users/self/media/recent/?access_token=' + access_token)
+      axios.get('https://api.instagram.com/v1/users/self/media/recent/?access_token=' + access_token + '&count=15')
       .then(response => (this.posts = response.data))
     }
   },
