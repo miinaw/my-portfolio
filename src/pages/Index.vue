@@ -33,7 +33,8 @@ export default {
     border: 1px solid #aaa;
     border-radius: 2px;
     color: #fff;
-    background-color: #566774;
+    background-color: #2c3e50;
+    opacity: .9;
     box-shadow: 1px 1px 1px 1px rgba(0,0,0,.5);
   }
 }
