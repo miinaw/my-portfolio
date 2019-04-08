@@ -2,7 +2,7 @@
   <div class="page contact">
     <Title title="Contact."/>
     <div class="page-content">
-      <form ref="form" v-model="contactFormValidation.valid" lazy-validation>
+      <form ref="form" lazy-validation>
         <div>
           <label>お名前
             <input 
@@ -31,8 +31,6 @@
           </label>
         </div>
         <button
-          :loading="contactForm.loading"
-          :disabled="!contactFormValidation.valid"
           @click="sendMail()"
           block
           large
