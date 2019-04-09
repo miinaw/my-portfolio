@@ -2,23 +2,36 @@
   <div class="page contact">
     <Title title="Contact."/>
     <div class="page-content">
-      <form name="contact" method="POST" netlify>
+      <form 
+        v-if="isSubmit === false" 
+        @submit.prevent="onSubmit" 
+        name="contact" method="POST"
+      >
         <div>
           <label>お名前
-            <input name="name" type="text">
+            <input v-model="name" name="name" type="text">
           </label>
         </div>
         <div>
           <label>メールアドレス
-            <input name="mail" type="email">
+            <input v-model="email" name="email" type="email">
           </label>
         </div>
         <div>
           <label>お問い合わせ
-            <textarea name="お問い合わせ"></textarea>
+            <textarea v-model="content" name="お問い合わせ"></textarea>
           </label>
         </div>
         <button type="submit" class="submit-button">送信</button>
+      </form>
+      <div v-if="isSubmit === true">
+        <p>ありがとうございます。</p>
+      </div>
+      
+      <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+        <input type="text" name="name" />
+        <input type="email" name="email" />
+        <textarea name="content"></textarea>
       </form>
     </div>
   </div>
@@ -26,12 +39,38 @@
 
 <script>
 import Title from '../components/Title.vue'
+import axios from 'axios'
 
 export default {
   name: 'about',
   components: {
     Title,
   },
+  data() {
+    return {
+      name: '',
+      email: '',
+      content: '',
+      isSubmit: false
+    }
+  },
+  methods: {
+    onSubmit() {
+      const params = new URLSearchParams()
+
+      params.append('form-name', 'contact') // Forms使うのに必要
+
+      params.append('name', this.name)
+      params.append('email', this.email)
+      params.append('content', this.content)
+
+      axios
+        .post('/', params)
+        .then(() => {
+          this.isSubmit = true
+        })
+    }
+  }
 }
 </script>
 
