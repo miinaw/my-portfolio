@@ -2,15 +2,15 @@
   <div class="page contact">
     <Title title="Contact."/>
     <div class="page-content">
-      <form action="https://" method="post">
+      <form name="contact" method="POST" netlify>
         <div>
           <label>お名前
-            <input name="お名前" type="text">
+            <input name="name" type="text">
           </label>
         </div>
         <div>
           <label>メールアドレス
-            <input name="メールアドレス" type="email">
+            <input name="mail" type="email">
           </label>
         </div>
         <div>
