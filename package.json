@@ -10,7 +10,6 @@
   "dependencies": {
     "axios": "^0.18.0",
     "eslint-config-vue": "^2.0.2",
-    "firebase": "^5.9.3",
     "vue": "^2.6.6",
     "vue-github-api": "^0.1.7",
     "vue-router": "^3.0.2"

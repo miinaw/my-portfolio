@@ -2,43 +2,23 @@
   <div class="page contact">
     <Title title="Contact."/>
     <div class="page-content">
-      <form ref="form" v-model="contactFormValidation.valid" lazy-validation>
+      <form action="https://" method="post">
         <div>
           <label>お名前
-            <input 
-              v-model="contactForm.name"
-              name="お名前" type="text"
-              required
-            >
+            <input name="お名前" type="text">
           </label>
         </div>
         <div>
           <label>メールアドレス
-            <input
-              v-model="contactForm.email"
-              name="メールアドレス" type="email"
-              required
-              >
+            <input name="メールアドレス" type="email">
           </label>
         </div>
         <div>
           <label>お問い合わせ
-            <textarea 
-              v-model="contactForm.contents"
-              name="お問い合わせ"
-              required
-            ></textarea>
+            <textarea name="お問い合わせ"></textarea>
           </label>
         </div>
-        <button
-          :loading="contactForm.loading"
-          :disabled="!contactFormValidation.valid"
-          @click="sendMail()"
-          block
-          large
-          color="info"
-          type="submit" class="submit-button"
-        >送信</button>
+        <button type="submit" class="submit-button">送信</button>
       </form>
     </div>
   </div>
@@ -46,43 +26,11 @@
 
 <script>
 import Title from '../components/Title.vue'
-import { functions } from '../plugins/firebase'
 
 export default {
   name: 'about',
   components: {
     Title,
-  },
-  data: () => ({
-    contactForm: {
-      name: '',
-      contents: '',
-      email: '',
-      loading: false
-    },
-  }),
-  methods: {
-    sendMail: function () {
-      if (this.$refs.form.validate()) {
-        this.contactForm.loading = true
-        const mailer = functions.httpsCallable('sendMail')
-
-        mailer(this.contactForm)
-          .then(() => {
-            this.formReset()
-            console.log("お問い合わせありがとうございました")
-          })
-          .catch(err => {
-            console.log(err)
-          })
-          .finally(() => {
-            this.contactForm.loading = false
-          })
-        }
-      },
-      formReset: function () {
-        this.$refs.form.reset()
-      },
   },
 }
 </script>
