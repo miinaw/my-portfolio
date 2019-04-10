@@ -23,10 +23,11 @@
             <textarea v-model="message" name="message"></textarea>
           </label>
         </div>
-        <button type="submit" class="submit-button">送信</button>
+        <button type="submit" class="submit-button">SEND</button>
       </form>
       <div v-if="isSubmit === true">
-        <p>ありがとうございます。</p>
+        <p>お問い合わせありがとうございます。</p>
+        <a class="button"><button>TOPページへ</button></a>
       </div>
     </div>
   </div>
@@ -76,7 +77,7 @@ form {
     min-height: 3rem;
   }
 }
-.submit-button {
+.submit-button, .button {
   display: block;
   margin: 2rem auto;
   padding: 1rem;
