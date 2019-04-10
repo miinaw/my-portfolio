@@ -5,9 +5,6 @@
       <router-link to="/"></router-link>
 
       <router-view></router-view>
-      <form name="contact" method="post" data-netlify="true">
-        <input type="hidden" name="form-name" value="contact" />
-      </form>
     </div>
   </div>
 </template>

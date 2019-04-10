@@ -19,6 +19,12 @@
       <strong>We're sorry but my-portfolio doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
     <div id="app"></div>
+    <!-- A little help for the Netlify post-processing bots -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <textarea name="message"></textarea>
+    </form>
     <!-- built files will be auto injected -->
   </body>
 </html>
