@@ -6,6 +6,7 @@
         v-if="isSubmit === false" 
         @submit.prevent="onSubmit" 
         name="contact" method="POST"
+        data-netlify="true"
       >
         <div>
           <label>お名前
@@ -19,7 +20,7 @@
         </div>
         <div>
           <label>お問い合わせ
-            <textarea v-model="content" name="お問い合わせ"></textarea>
+            <textarea v-model="content" name="content"></textarea>
           </label>
         </div>
         <button type="submit" class="submit-button">送信</button>
@@ -28,10 +29,10 @@
         <p>ありがとうございます。</p>
       </div>
       
-      <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <form name="ask-question" netlify netlify-honeypot="bot-field" hidden>
         <input type="text" name="name" />
-        <input type="email" name="email" />
-        <textarea name="content"></textarea>
+        <input type="radio" name="panelist" />
+        <textarea name="question"></textarea>
       </form>
     </div>
   </div>
@@ -65,7 +66,7 @@ export default {
       params.append('content', this.content)
 
       axios
-        .post('/contact', params)
+        .post('/', params)
         .then(() => {
           this.isSubmit = true
         })
