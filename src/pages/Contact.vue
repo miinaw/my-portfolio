@@ -65,7 +65,7 @@ export default {
       params.append('content', this.content)
 
       axios
-        .post('src/pages/Contact', params)
+        .post('/Contact', params)
         .then(() => {
           this.isSubmit = true
         })
