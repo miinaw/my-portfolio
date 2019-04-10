@@ -20,7 +20,7 @@
         </div>
         <div>
           <label>お問い合わせ
-            <textarea v-model="content" name="content"></textarea>
+            <textarea v-model="message" name="message"></textarea>
           </label>
         </div>
         <button type="submit" class="submit-button">送信</button>
@@ -45,7 +45,7 @@ export default {
     return {
       name: '',
       email: '',
-      content: '',
+      message: '',
       isSubmit: false
     }
   },
@@ -57,7 +57,7 @@ export default {
 
       params.append('name', this.name)
       params.append('email', this.email)
-      params.append('content', this.content)
+      params.append('message', this.message)
 
       axios
         .post('/', params)
