@@ -28,12 +28,6 @@
       <div v-if="isSubmit === true">
         <p>ありがとうございます。</p>
       </div>
-      
-      <form name="ask-question" netlify netlify-honeypot="bot-field" hidden>
-        <input type="text" name="name" />
-        <input type="radio" name="panelist" />
-        <textarea name="question"></textarea>
-      </form>
     </div>
   </div>
 </template>
