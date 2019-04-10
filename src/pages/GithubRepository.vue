@@ -8,7 +8,7 @@
       <div>
         <a 
         v-for="item in repositoriesCount" :key="item.key" 
-        v-bind:href="item.git_url"
+        v-bind:href="item.html_url"
         target="_blank"
         class="repository-list"
         >
