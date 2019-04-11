@@ -18,7 +18,7 @@
             <input v-model="email" name="email" type="email">
           </label>
         </div>
-        <div>
+        <div class="message">
           <label>お問い合わせ
             <textarea v-model="message" name="message"></textarea>
           </label>
@@ -72,15 +72,27 @@ export default {
 
 <style lang="scss" scoped>
 form {
-  text-align: left;
+  margin: 0 2rem;
+  color:#2c3e50;
   div {
-    min-height: 3rem;
+    text-align: left;
+  }
+  input, textarea {
+    display: block;
+    margin: .5rem 0 1.8rem;
+    width: 100%;
+    line-height: 1.5rem;
+    border: 1px solid #ccc;
+  }
+  textarea {
+    height: auto;
+    min-height: 10rem;
   }
 }
 .submit-button, .button {
   display: block;
-  margin: 2rem auto;
-  padding: 1rem;
+  margin: 3rem auto;
+  padding: .8rem;
   width: 60vw;
   background-color: #2c3e50;
   color: #fff;
