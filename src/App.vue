@@ -6,17 +6,20 @@
 
       <router-view></router-view>
     </div>
+    <Footer/>
   </div>
 </template>
 
 <script>
 import 'normalize.css'
 import Header from './components/Header.vue'
+import Footer from './components/Footer.vue'
 
 export default {
   name: 'app',
   components: {
     Header,
+    Footer,
   },
 }
 </script>
@@ -56,6 +59,7 @@ a {
 }
 .content {
   margin: 0 4vw;
+  height: calc(100vh - 7rem); /* minus header height */
 }
 .page-content {
    margin: 2rem 0;
