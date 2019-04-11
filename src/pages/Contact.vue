@@ -27,7 +27,7 @@
       </form>
       <div v-if="isSubmit === true">
         <p>お問い合わせありがとうございます。</p>
-        <a class="button"><button>TOPページへ</button></a>
+        <a href="/" class="button">TOPページへ</a>
       </div>
     </div>
   </div>
