@@ -29,6 +29,9 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
+[v-cloak] { 
+  display: none 
+}
 p {
   margin: 0;
 }

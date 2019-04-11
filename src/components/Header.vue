@@ -8,7 +8,7 @@
       <div></div>
     </div>
     <transition name="menu">
-    <div class="humberger-wrap" v-show="openMenu" @click="openMenu = !openMenu">
+    <div class="humberger-wrap" v-cloak v-show="openMenu" @click="openMenu = !openMenu">
       <div class="humberger-menu">
         <ul class="menulist">
           <MenuBox/>
