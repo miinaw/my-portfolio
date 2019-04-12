@@ -74,6 +74,7 @@ export default {
       }
     },
     onSubmit() {
+      this.errors = [];
       const params = new URLSearchParams()
 
       params.append('form-name', 'contact') // Forms使うのに必要
