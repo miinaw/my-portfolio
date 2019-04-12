@@ -11,7 +11,7 @@
     <div class="humberger-wrap" v-cloak v-show="openMenu" @click="openMenu = !openMenu">
       <div class="humberger-menu">
         <ul class="menulist">
-          <MenuBox/>
+          <MenuBox v-cloak/>
         </ul>
       </div>
     </div>
