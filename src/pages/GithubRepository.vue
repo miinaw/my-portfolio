@@ -4,7 +4,7 @@
       <img class="logo" alt="logo" v-bind:src="MyPageData.avatar_url">
     </a>
     <Title title="My github Repositories."/>
-    <loading :loading="loading"/>
+    <loading v-show="loading"/>
     <div v-show="!loading" class="page-content">
       <div>
         <a 

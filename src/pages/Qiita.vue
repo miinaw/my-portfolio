@@ -4,7 +4,7 @@
       <img class="logo" alt="logo" src="https://qiita-image-store.s3.amazonaws.com/0/263845/profile-images/1543141905">
     </a>
     <Title title="My Qiita posts." description=""/>
-    <Loading :loading="loading"/>
+    <Loading v-show="loading"/>
     <div v-show="!loading" class="page-content">
       <div>
         <a 
