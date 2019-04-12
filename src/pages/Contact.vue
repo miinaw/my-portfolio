@@ -2,9 +2,13 @@
   <div class="page contact">
     <Title title="Contact."/>
     <div class="page-content">
+      <div v-if="errors.length" class="error-message">
+        <p v-for="error in errors" :key="error.key">{{ error }}</p>
+        <p><br>を入力してください</p>
+      </div>
       <form 
         v-if="isSubmit === false" 
-        @submit.prevent="onSubmit" 
+        @submit.prevent="checkForm" 
         name="contact" method="POST"
         data-netlify="true"
       >
@@ -29,9 +33,6 @@
         <p>お問い合わせありがとうございます。</p>
         <a href="/" class="button">TOPページへ</a>
       </div>
-      <div v-show="error === true">
-        <p>{{ place }}を入力してください</p>
-      </div>
     </div>
   </div>
 </template>
@@ -51,16 +52,29 @@ export default {
       email: '',
       message: '',
       isSubmit: false,
-      error: false,
-      place: '',
+      errors: [],
     }
   },
   methods: {
-    onSubmit() {
-      if(this.name === '') return this.error === true, this.place = 'お名前'
-      if(this.email === '') return this.error === true, this.place = 'メールアドレス'
-      if(this.message === '') return this.error === true, this.place = 'お問い合わせ内容'
+    checkForm() {
+      if (this.name && this.email && this.message) {
+        return true;
+      }
+      this.errors = [];
       
+      if (!this.name) {
+        this.errors.push('「お名前」');
+      }
+      if (!this.email) {
+        this.errors.push('「メールアドレス」');
+      }
+      if (!this.message) {
+        this.errors.push('「お問い合わせ内容」');
+      }
+      
+      this.onSubmit();
+    },
+    onSubmit() {
       const params = new URLSearchParams()
 
       params.append('form-name', 'contact') // Forms使うのに必要
@@ -107,5 +121,18 @@ form {
   background-color: #2c3e50;
   box-shadow: 1px 1px 1px 1px rgba(0,0,0,.4);
   color: #fff;
+}
+.error-message {
+  margin: 2rem 2rem;
+  text-align: left;
+  font-size: .8rem;
+  font-weight: 600;
+  color: #cc1426;
+  p:first-child::before {
+    content: '※';
+  }
+  p {
+    display: inline;
+  }
 }
 </style>
