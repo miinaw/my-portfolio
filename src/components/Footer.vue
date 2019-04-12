@@ -1,15 +1,18 @@
 <template>
   <div class="footer">
+    <Sns/>
     <small class="copyright">© 2019 Minami Yokoyama.</small>
   </div>
 </template>
 
 <script>
+import Sns from './SnsList.vue'
+
 export default {
   name: 'Footer',
-  data() {
-    return {}
-  }
+  components: {
+    Sns,
+  },
 }
 </script>
 
