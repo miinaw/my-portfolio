@@ -19,7 +19,7 @@
           </label>
         </div>
         <div class="message">
-          <label>お問い合わせ
+          <label>お問い合わせ内容
             <textarea v-model="message" name="message"></textarea>
           </label>
         </div>
@@ -28,6 +28,9 @@
       <div v-if="isSubmit === true">
         <p>お問い合わせありがとうございます。</p>
         <a href="/" class="button">TOPページへ</a>
+      </div>
+      <div v-if="error === true">
+        <p>{{ place }}を入力してください</p>
       </div>
     </div>
   </div>
@@ -47,11 +50,17 @@ export default {
       name: '',
       email: '',
       message: '',
-      isSubmit: false
+      isSubmit: false,
+      error: false,
+      place: '',
     }
   },
   methods: {
     onSubmit() {
+      if(this.name === '') return this.error === true, this.place = 'お名前'
+      if(this.email === '') return this.error === true, this.place = 'メールアドレス'
+      if(this.message === '') return this.error === true, this.place = 'お問い合わせ内容'
+      
       const params = new URLSearchParams()
 
       params.append('form-name', 'contact') // Forms使うのに必要
