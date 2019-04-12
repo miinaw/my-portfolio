@@ -1,7 +1,7 @@
 <template>
   <div class="sns-list">
     <ul>
-      <li v-for="sns in snslist" :key="sns.key" :class="sns.name"><a :href="sns.url" target="_blank"></a></li>
+      <li v-for="sns in snslist" :key="sns.key"><a :href="sns.url" :class="sns.name" target="_blank"></a></li>
     </ul>
   </div>
 </template>
@@ -27,7 +27,7 @@ export default {
     width: 30%;
     margin: 0 auto 1rem;
   }
-  li::before {
+  a::before {
     display: block;
     width: 1.5rem;
     height: 1.5rem;
