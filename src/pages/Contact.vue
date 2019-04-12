@@ -58,6 +58,7 @@ export default {
   methods: {
     checkForm() {
       if (this.name && this.email && this.message) {
+        this.onSubmit();
         return true;
       }
       this.errors = [];
@@ -71,8 +72,6 @@ export default {
       if (!this.message) {
         this.errors.push('「お問い合わせ内容」');
       }
-      
-      this.onSubmit();
     },
     onSubmit() {
       const params = new URLSearchParams()
