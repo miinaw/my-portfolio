@@ -1,10 +1,17 @@
 <template>
   <div class="page qiita">
-    <a href="https://qiita.com/miiina016" target="_blank">
+    <a v-show="!loading" href="https://qiita.com/miiina016" target="_blank">
       <img class="logo" alt="logo" src="https://qiita-image-store.s3.amazonaws.com/0/263845/profile-images/1543141905">
     </a>
     <Title title="My Qiita posts." description=""/>
-    <div class="page-content">
+    <breeding-rhombus-spinner
+      v-show="loading"
+      :animation-duration="2000"
+      :size="30"
+      color="#ccc"
+      class="loading"
+    />
+    <div v-show="!loading" class="page-content">
       <div>
         <a 
         v-for="post in posts" :key="post.key" 
@@ -28,21 +35,24 @@
 <script>
 import Title from '../components/Title.vue'
 import axios from 'axios';
+import { BreedingRhombusSpinner } from 'epic-spinners'
 
 export default {
   name: 'qiita',
   components: {
     Title,
+    BreedingRhombusSpinner,
   },
   data() {
     return {
       posts: [],
+      loading: true,
     }
   },
   methods: {
     getPost() {
       axios.get('https://qiita.com/api/v2/users/miiina016/items')
-      .then(response => (this.posts = response.data))
+      .then(response => (this.posts = response.data),this.loading = false)
     }
   },
   created () {
@@ -92,5 +102,7 @@ export default {
     }
   }
 }
-
+.loading {
+  margin: 2rem auto;
+}
 </style>

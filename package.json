@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "epic-spinners": "^1.0.4",
     "eslint-config-vue": "^2.0.2",
     "vue": "^2.6.6",
     "vue-github-api": "^0.1.7",
