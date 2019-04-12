@@ -4,13 +4,7 @@
       <img class="logo" alt="logo" src="https://qiita-image-store.s3.amazonaws.com/0/263845/profile-images/1543141905">
     </a>
     <Title title="My Qiita posts." description=""/>
-    <breeding-rhombus-spinner
-      v-show="loading"
-      :animation-duration="2000"
-      :size="30"
-      color="#ccc"
-      class="loading"
-    />
+    <Loading :loading="loading"/>
     <div v-show="!loading" class="page-content">
       <div>
         <a 
@@ -34,14 +28,14 @@
 
 <script>
 import Title from '../components/Title.vue'
+import Loading from '../components/Loading.vue'
 import axios from 'axios';
-import { BreedingRhombusSpinner } from 'epic-spinners'
 
 export default {
   name: 'qiita',
   components: {
     Title,
-    BreedingRhombusSpinner,
+    Loading,
   },
   data() {
     return {
@@ -52,7 +46,7 @@ export default {
   methods: {
     getPost() {
       axios.get('https://qiita.com/api/v2/users/miiina016/items')
-      .then(response => (this.posts = response.data),this.loading = false)
+      .then(response => (this.posts = response.data), this.loading = false)
     }
   },
   created () {
@@ -101,8 +95,5 @@ export default {
       margin-left: .3rem;
     }
   }
-}
-.loading {
-  margin: 2rem auto;
 }
 </style>

@@ -4,13 +4,7 @@
       <img class="logo" alt="logo" v-bind:src="MyPageData.avatar_url">
     </a>
     <Title title="My github Repositories."/>
-    <breeding-rhombus-spinner
-      v-show="loading"
-      :animation-duration="2000"
-      :size="30"
-      color="#ccc"
-      class="loading"
-    />
+    <loading :loading="loading"/>
     <div v-show="!loading" class="page-content">
       <div>
         <a 
@@ -33,10 +27,10 @@
 
 <script>
 import Title from '../components/Title.vue'
+import Loading from '../components/Loading.vue'
 import Vue from 'vue'
 import VueResource from 'vue-resource'
 import GitHubAPI from 'vue-github-api'
-import { BreedingRhombusSpinner } from 'epic-spinners'
 
 Vue.use(VueResource)
 Vue.use(GitHubAPI, { token: process.env.VUE_APP_GIT_ACCESS_TOKEN })
@@ -45,7 +39,7 @@ export default {
   name: 'Github',
   components: {
     Title,
-    BreedingRhombusSpinner,
+    Loading,
   },
   data() {
      return {
