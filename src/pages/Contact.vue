@@ -29,7 +29,7 @@
         <p>お問い合わせありがとうございます。</p>
         <a href="/" class="button">TOPページへ</a>
       </div>
-      <div v-if="error === true">
+      <div v-show="error === true">
         <p>{{ place }}を入力してください</p>
       </div>
     </div>
@@ -103,7 +103,9 @@ form {
   margin: 3rem auto;
   padding: .8rem;
   width: 60vw;
+  border: solid 1px #aaa;
   background-color: #2c3e50;
+  box-shadow: 1px 1px 1px 1px rgba(0,0,0,.4);
   color: #fff;
 }
 </style>
