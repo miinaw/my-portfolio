@@ -18,7 +18,7 @@
           <div class="description">{{ item.description }}</div>
           <div class="info">
             <div class="stars">{{ item.stargazers_count }}</div>
-            <div class="langages">{{ item.language }}</div>            
+            <div v-if="item.language !== null" class="langages">{{ item.language }}</div>
           </div>
         </a>
       </div>
@@ -101,6 +101,9 @@ export default {
 .info {
   display: flex;
   justify-content: space-between;
+  height: 1.4rem;
+  line-height: 1.4rem;
+  margin: auto 0;
   font-size: .8rem;
   .stars {
     display: flex;
@@ -109,13 +112,21 @@ export default {
     display: block;
     width: .8rem;
     height: .8rem;
-    margin-right: .3rem;
+    line-height: 1.4rem;
+    margin: auto .3rem auto 0;
     background-image: url('../assets/images/icons/star.svg');
     background-repeat: no-repeat;
     content: '';
   }
   .langages {
     display: flex;
+    height: 1rem;
+    align-items: center;
+    padding: .2rem .5rem;
+    background-color: #eff3f6;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 1rem;
+    font-size: .7rem;
   }
 }
 .visit-button {
