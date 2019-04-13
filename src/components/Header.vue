@@ -1,5 +1,5 @@
 <template>
-  <div v-cloak class="header">
+  <div class="header">
     <div class="header-column">
       <div class="OpenMenuButton humberger" :class="{ 'is-active': openMenu }" @click="openMenu = !openMenu">
         <span class="humberger-button"></span>
@@ -8,10 +8,10 @@
       <div></div>
     </div>
     <transition name="menu">
-    <div class="humberger-wrap" v-cloak v-show="openMenu" @click="openMenu = !openMenu">
+    <div class="humberger-wrap" v-show="openMenu" @click="openMenu = !openMenu">
       <div class="humberger-menu">
         <ul class="menulist">
-          <MenuBox v-cloak/>
+          <MenuBox/>
         </ul>
       </div>
     </div>
