@@ -7,28 +7,13 @@
 </template>
 
 <script>
+import { MENU_LIST } from '../utils/constants/menu.js'
+
 export default {
   name: 'MenuBox',
   data() {
     return {
-      menulist: [
-        { 
-          id: 0,
-          name: "about",
-         },
-        { 
-          id: 1,
-          name: "github",
-         },
-         {
-           id: 2,
-           name: "qiita"
-         },
-        { 
-          id: 3,
-          name: "contact",
-         },
-      ]
+      menulist: MENU_LIST,
     }
   },
 }
