@@ -6,6 +6,7 @@
     <Title title="My github Repositories."/>
     <loading v-show="loading"/>
     <div v-show="!loading" class="page-content">
+      <a :href="MyPageData.html_url" target="_blank" class="visit-button">Visit</a>
       <div>
         <a 
         v-for="item in repositoriesCount" :key="item.key" 
@@ -48,7 +49,7 @@ export default {
       loading: true,
      }
   },
-  mounted: function () {
+  created: function () {
     this.GitHubAPI.get('/user/repos', {}, [this.GithubData, 'repositories'])
     this.GitHubAPI.get('/user', {}, [this.AccountData, 'mypage'])
   },
@@ -117,7 +118,17 @@ export default {
     display: flex;
   }
 }
-.loading {
-  margin: 2rem auto;
+.visit-button {
+  display: block;
+  margin: .5rem .1rem .5rem auto;
+  padding: .3rem .5rem;
+  width: fit-content;
+  background-color: #28a745;
+  background-image: linear-gradient(-180deg,#34d058,#28a745 90%);
+  border: 1px solid rgba(27,31,35,.2);
+  border-radius: .25em;
+  font-size: .9rem;
+  font-weight: 600;
+  color: #fff;
 }
 </style>
