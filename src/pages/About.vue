@@ -1,8 +1,6 @@
 <template>
   <div class="page about">
-    <a href="/">
-      <img class="logo" alt="logo" src="../assets/images/logo.jpg">
-    </a>
+    <Logo/>
     <Title title="About me." description="Hi."/>
     <div class="page-content">
       <div class="heading">
@@ -56,12 +54,14 @@
 </template>
 
 <script>
+import Logo from '../components/Logo.vue'
 import Title from '../components/Title.vue'
 import axios from 'axios';
 
 export default {
   name: 'about',
   components: {
+    Logo,
     Title,
   },
   data() {

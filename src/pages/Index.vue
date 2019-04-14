@@ -1,8 +1,6 @@
 <template>
   <div class="page index">
-    <a href="/">
-      <img class="logo" alt="logo" src="../assets/images/logo.jpg">
-    </a>
+    <Logo/>
     <Title title="My portfolio" description="My name is Minami Yokoyama."/>
     <MenuBox/>
     <router-view></router-view>
@@ -10,12 +8,14 @@
 </template>
 
 <script>
+import Logo from '../components/Logo.vue'
 import Title from '../components/Title.vue'
 import MenuBox from '../components/MenuBox.vue'
 
 export default {
   name: 'index',
   components: {
+    Logo,
     Title,
     MenuBox
   },

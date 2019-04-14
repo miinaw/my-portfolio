@@ -1,8 +1,6 @@
 <template>
   <div class="page github">
-    <a v-show="!loading" v-bind:href="MyPageData.html_url" target="_blank">
-      <img class="logo" alt="logo" v-bind:src="MyPageData.avatar_url">
-    </a>
+    <Logo v-show="!loading" :href="MyPageData.html_url" target="_blank" :src="MyPageData.avatar_url"/>
     <Title title="My github Repositories."/>
     <loading v-show="loading"/>
     <div v-show="!loading" class="page-content">
@@ -27,6 +25,7 @@
 </template>
 
 <script>
+import Logo from '../components/Logo.vue'
 import Title from '../components/Title.vue'
 import Loading from '../components/Loading.vue'
 import Vue from 'vue'
@@ -39,6 +38,7 @@ Vue.use(GitHubAPI, { token: process.env.VUE_APP_GIT_ACCESS_TOKEN })
 export default {
   name: 'Github',
   components: {
+    Logo,
     Title,
     Loading,
   },

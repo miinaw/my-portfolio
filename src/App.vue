@@ -64,11 +64,4 @@ a {
 .page-content {
    margin: 2rem 0;
 }
-.logo {
-  width: 7rem;
-  height: 7rem;
-  margin-bottom: .3rem;
-  border-radius: 50%;
-  border: 1px solid #999;
-}
 </style>

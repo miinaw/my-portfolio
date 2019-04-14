@@ -1,8 +1,6 @@
 <template>
   <div class="page qiita">
-    <a v-show="!loading" href="https://qiita.com/miiina016" target="_blank">
-      <img class="logo" alt="logo" src="https://qiita-image-store.s3.amazonaws.com/0/263845/profile-images/1543141905">
-    </a>
+    <Logo v-show="!loading" href="https://qiita.com/miiina016" target="_blank" src="https://qiita-image-store.s3.amazonaws.com/0/263845/profile-images/1543141905"/>
     <Title title="My Qiita posts." description=""/>
     <Loading v-show="loading"/>
     <div v-show="!loading" class="page-content">
@@ -27,6 +25,7 @@
 </template>
 
 <script>
+import Logo from '../components/Logo.vue'
 import Title from '../components/Title.vue'
 import Loading from '../components/Loading.vue'
 import axios from 'axios';
@@ -34,6 +33,7 @@ import axios from 'axios';
 export default {
   name: 'qiita',
   components: {
+    Logo,
     Title,
     Loading,
   },
