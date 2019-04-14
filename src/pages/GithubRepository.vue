@@ -20,6 +20,9 @@
           </div>
         </a>
       </div>
+      <div class="grass">
+        <img src="https://grass-graph.moshimo.works/images/miinaw.png">
+      </div>
     </div>
   </div>
 </template>
@@ -67,8 +70,8 @@ export default {
         }
         return this.AccountData.mypage
       }
-      return "../assets/images/logo.jpg"
-    }
+      return "logo.jpg"
+    },
   },
 };
 </script>
@@ -141,5 +144,11 @@ export default {
   font-size: .9rem;
   font-weight: 600;
   color: #fff;
+}
+.grass {
+  img {
+    width: calc(100vw - 8vw);
+    margin: 1rem auto;
+  }
 }
 </style>
