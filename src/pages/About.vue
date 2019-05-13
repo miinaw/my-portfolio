@@ -1,8 +1,12 @@
 <template>
-  <div class="page about">
-    <Logo/>
-    <Title title="About me." description="Hi."/>
-    <div class="page-content">
+  <PageBase pagename="about">
+    <template v-slot:logo><Logo/></template>
+    
+    <template v-slot="title">
+      <Title title="About me." description="Hi. I'm a engineer."/>
+    </template>
+    
+    <template v-slot:content>
       <div class="heading">
         <h1 class="heading-title">Profile.</h1>
       </div>
@@ -49,11 +53,12 @@
         <img v-bind:src="post.images.standard_resolution.url">
         </a>
       </div>
-    </div>
-  </div>
+    </template>
+  </PageBase>
 </template>
 
 <script>
+import PageBase from '../components/PageBase.vue'
 import Logo from '../components/Logo.vue'
 import Title from '../components/Title.vue'
 import axios from 'axios';
@@ -61,6 +66,7 @@ import axios from 'axios';
 export default {
   name: 'about',
   components: {
+    PageBase,
     Logo,
     Title,
   },

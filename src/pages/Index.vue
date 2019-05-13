@@ -1,13 +1,17 @@
 <template>
-  <div class="page index">
-    <Logo/>
-    <Title title="My portfolio" description="My name is Minami Yokoyama."/>
-    <MenuBox/>
-    <router-view></router-view>
-  </div>
+  <PageBase pagename="index">
+    <template v-slot:logo><Logo/></template>
+    
+    <template v-slot="title">
+      <Title title="My portfolio" description="My name is Minami Yokoyama."/>
+    </template>
+    
+    <template v-slot:content><MenuBox/></template>
+  </PageBase>
 </template>
 
 <script>
+import PageBase from '../components/PageBase.vue'
 import Logo from '../components/Logo.vue'
 import Title from '../components/Title.vue'
 import MenuBox from '../components/MenuBox.vue'
@@ -15,9 +19,10 @@ import MenuBox from '../components/MenuBox.vue'
 export default {
   name: 'index',
   components: {
+    PageBase,
     Logo,
     Title,
-    MenuBox
+    MenuBox,
   },
 }
 </script>

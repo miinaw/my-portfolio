@@ -1,7 +1,8 @@
 <template>
-  <div class="page contact">
-    <Title title="Contact."/>
-    <div class="page-content">
+  <PageBase pagename="contact">
+    <template v-slot="title"><Title title="Contact."/></template>
+    
+    <template v-slot:content>
       <div v-if="errors.length" class="error-message">
         <p v-for="error in errors" :key="error.key">{{ error }}</p>
         <p><br>を入力してください</p>
@@ -33,17 +34,19 @@
         <p>お問い合わせありがとうございます。</p>
         <a href="/" class="button">TOPページへ</a>
       </div>
-    </div>
-  </div>
+    </template>
+  </PageBase>
 </template>
 
 <script>
+import PageBase from '../components/PageBase.vue'
 import Title from '../components/Title.vue'
 import axios from 'axios'
 
 export default {
   name: 'about',
   components: {
+    PageBase,
     Title,
   },
   data() {

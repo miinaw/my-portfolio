@@ -3,7 +3,6 @@
     <Header/>
     <div class="content">
       <router-link to="/"></router-link>
-
       <router-view></router-view>
     </div>
     <Footer/>
@@ -60,8 +59,5 @@ a {
 .content {
   margin: 0 4vw;
   min-height: calc(100vh - 7rem); /* minus header height */
-}
-.page-content {
-   margin: 2rem 0;
 }
 </style>
