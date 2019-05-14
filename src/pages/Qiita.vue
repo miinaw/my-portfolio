@@ -1,10 +1,16 @@
 <template>
-  <div class="page qiita">
-    <Logo v-show="!loading" href="https://qiita.com/miiina016" target="_blank" src="https://qiita-image-store.s3.amazonaws.com/0/263845/profile-images/1543141905"/>
-    <Title title="My Qiita posts." description=""/>
-    <Loading v-show="loading"/>
-    <div v-show="!loading" class="page-content">
-      <div>
+  <PageBase pagename="qiita">
+    <template v-slot:logo>
+      <Logo v-show="!loading" href="https://qiita.com/miiina016" target="_blank" src="https://qiita-image-store.s3.amazonaws.com/0/263845/profile-images/1543141905"/>
+    </template>
+    
+    <template v-slot="title">
+      <Title title="My Qiita posts." description=""/>
+    </template>
+    
+    <template v-slot:content>
+      <Loading v-show="loading"/>
+      <div v-show="!loading">
         <a 
         v-for="post in posts" :key="post.key" 
         v-bind:href="post.url"
@@ -20,11 +26,12 @@
           </div>
         </a>
       </div>
-   </div>
- </div>
+    </template>
+  </PageBase>
 </template>
 
 <script>
+import PageBase from '../components/PageBase.vue'
 import Logo from '../components/Logo.vue'
 import Title from '../components/Title.vue'
 import Loading from '../components/Loading.vue'
@@ -33,6 +40,7 @@ import axios from 'axios';
 export default {
   name: 'qiita',
   components: {
+    PageBase,
     Logo,
     Title,
     Loading,

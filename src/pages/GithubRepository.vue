@@ -1,33 +1,42 @@
 <template>
-  <div class="page github">
-    <Logo v-show="!loading" :href="MyPageData.html_url" target="_blank" :src="MyPageData.avatar_url"/>
-    <Title title="My github Repositories."/>
-    <loading v-show="loading"/>
-    <div v-show="!loading" class="page-content">
-      <a :href="MyPageData.html_url" target="_blank" class="visit-button">Visit</a>
-      <div>
-        <a 
-        v-for="item in repositoriesCount" :key="item.key" 
-        v-bind:href="item.html_url"
-        target="_blank"
-        class="repository-list"
-        >
-          <div class="title">{{ item.name }}</div>
-          <div class="description">{{ item.description }}</div>
-          <div class="info">
-            <div class="stars">{{ item.stargazers_count }}</div>
-            <div v-if="item.language !== null" class="langages">{{ item.language }}</div>
-          </div>
-        </a>
+  <PageBase pagename="github">
+    <template v-slot:logo>
+      <Logo v-show="!loading" :href="MyPageData.html_url" target="_blank" :src="MyPageData.avatar_url"/>
+    </template>
+    
+    <template v-slot="title">
+      <Title title="My github Repositories."/>
+    </template>
+
+    <template v-slot:content>
+      <loading v-show="loading"/>
+      <div v-show="!loading">
+        <a :href="MyPageData.html_url" target="_blank" class="visit-button">Visit</a>
+        <div>
+          <a 
+          v-for="item in repositoriesCount" :key="item.key" 
+          v-bind:href="item.html_url"
+          target="_blank"
+          class="repository-list"
+          >
+            <div class="title">{{ item.name }}</div>
+            <div class="description">{{ item.description }}</div>
+            <div class="info">
+              <div class="stars">{{ item.stargazers_count }}</div>
+              <div v-if="item.language !== null" class="langages">{{ item.language }}</div>
+            </div>
+          </a>
+        </div>
+        <div class="grass">
+          <img src="https://grass-graph.moshimo.works/images/miinaw.png">
+        </div>
       </div>
-      <div class="grass">
-        <img src="https://grass-graph.moshimo.works/images/miinaw.png">
-      </div>
-    </div>
-  </div>
+    </template>
+  </PageBase>
 </template>
 
 <script>
+import PageBase from '../components/PageBase.vue'
 import Logo from '../components/Logo.vue'
 import Title from '../components/Title.vue'
 import Loading from '../components/Loading.vue'
@@ -41,6 +50,7 @@ Vue.use(GitHubAPI, { token: process.env.VUE_APP_GIT_ACCESS_TOKEN })
 export default {
   name: 'Github',
   components: {
+    PageBase,
     Logo,
     Title,
     Loading,
