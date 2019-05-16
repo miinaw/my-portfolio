@@ -21,6 +21,6 @@ export default {
 
 <style lang="scss">
 .page-content {
-   margin: 2rem 0;
+   margin: 2rem 0 4rem;
 }
 </style>

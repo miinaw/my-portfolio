@@ -24,8 +24,6 @@ export default {
   ul {
     display: flex;
     justify-content: space-between;
-    width: 30%;
-    margin: 0 auto 1rem;
   }
   a::before {
     display: block;

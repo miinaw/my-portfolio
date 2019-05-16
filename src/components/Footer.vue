@@ -31,4 +31,12 @@ export default {
     color: #ddd; 
   }
 }
+
+// Sns
+.footer /deep/ .sns-list {
+  ul {
+    width: 30%;
+    margin: 0 auto 1rem;
+  }
+}
 </style>
