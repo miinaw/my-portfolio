@@ -127,12 +127,10 @@ export default {
 .menu-enter-active {
   animation-name: RightToLeft;
   animation-duration: .3s;
-  opacity: 1;
 }
 .menu-leave-active { 
   animation-name: LeftToRight;
   animation-duration: .3s;
-  opacity: 1;
 }
 
 // MenuBox

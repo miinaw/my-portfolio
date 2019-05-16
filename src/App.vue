@@ -32,7 +32,7 @@ export default {
   color: #2c3e50;
 }
 [v-cloak] { 
-  display: none 
+  display: none; 
 }
 p {
   margin: 0;
