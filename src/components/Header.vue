@@ -10,9 +10,11 @@
     <transition name="menu">
     <div class="humberger-wrap" v-show="openMenu" @click="openMenu = !openMenu">
       <div class="humberger-menu">
-        <ul class="menulist">
+        <div class="menu-wrap">
           <MenuBox/>
-        </ul>
+          <SubMenu/>
+          <SnsList/>
+        </div>
       </div>
     </div>
     </transition>
@@ -22,11 +24,15 @@
 
 <script>
 import MenuBox from './MenuBox.vue'
+import SubMenu from './SubMenu.vue'
+import SnsList from './SnsList.vue'
 
 export default {
   name: 'Header',
   components: {
-    MenuBox
+    MenuBox,
+    SubMenu,
+    SnsList
   },
   data() {
     return { openMenu: false }
@@ -114,6 +120,10 @@ export default {
     background-color: #ddd;
   }
 }
+.menu-wrap {
+  padding: 2rem 1.4rem;
+  text-align: left;
+}
 .menu-enter-active {
   animation-name: RightToLeft;
   animation-duration: .3s;
@@ -127,11 +137,7 @@ export default {
 
 // MenuBox
 .header /deep/ .menu-box {
-  margin: 0;
-  .menu-list {
-    padding: 2rem 1.4rem;
-    text-align: left;
-  }
+  margin: 0 0 4rem;
   .menu-list-item {
     display: flex;
     color: #2c3e50;    
@@ -161,7 +167,26 @@ export default {
     &.contact::before {
       background-image: url('../assets/images/icons/mail.svg');
     }
-    
+  }
+}
+
+// SubMenu
+.header /deep/ .submenu {
+  .submenu-list-item {
+    font-size: 1rem;
+    color: #555;
+  }
+}
+
+// SnsList
+.header /deep/ .sns-list {
+  margin: 1rem 0;
+  ul {
+    width: 40%;
+  }
+  a::before {
+    width: 1.8rem;
+    height: 1.8rem;
   }
 }
 
