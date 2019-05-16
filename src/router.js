@@ -7,6 +7,7 @@ import Index from './pages/Index.vue'
 import About from './pages/About.vue'
 import GithubRepository from './pages/GithubRepository.vue'
 import Qiita from './pages/Qiita.vue'
+import Rakugaki from './pages/Rakugaki.vue'
 import Contact from './pages/Contact.vue'
 
 export default new VueRouter({
@@ -27,6 +28,10 @@ export default new VueRouter({
     {
       path: '/qiita',
       component: Qiita
+    },
+    {
+      path: '/rakugaki',
+      component: Rakugaki
     },
     {
       path: '/contact',
