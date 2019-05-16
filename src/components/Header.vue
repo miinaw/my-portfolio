@@ -162,6 +162,9 @@ export default {
     &.qiita::before {
       background-image: url('../assets/images/icons/qiita.svg');
     }
+    &.rakugaki::before {
+      background-image: url('../assets/images/icons/palette.svg');
+    }
     &.contact::before {
       background-image: url('../assets/images/icons/mail.svg');
     }
