@@ -5,7 +5,7 @@
     </template>
     
     <template v-slot="title">
-      <Title title="My Qiita posts." description=""/>
+      <Title title="My Qiita posts" description=""/>
     </template>
     
     <template v-slot:content>

@@ -5,7 +5,7 @@
     </template>
     
     <template v-slot="title">
-      <Title title="My github Repositories."/>
+      <Title title="My github Repositories"/>
     </template>
 
     <template v-slot:content>

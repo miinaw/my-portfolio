@@ -1,6 +1,6 @@
 <template>
   <PageBase pagename="contact">
-    <template v-slot="title"><Title title="Contact."/></template>
+    <template v-slot="title"><Title title="Contact"/></template>
     
     <template v-slot:content>
       <div v-if="errors.length" class="error-message">

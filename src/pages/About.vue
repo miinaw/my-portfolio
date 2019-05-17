@@ -3,7 +3,7 @@
     <template v-slot:logo><Logo/></template>
     
     <template v-slot="title">
-      <Title title="About me." description="Hi. I'm a engineer."/>
+      <Title title="About me" description="Hi. I'm a engineer."/>
     </template>
     
     <template v-slot:content>
