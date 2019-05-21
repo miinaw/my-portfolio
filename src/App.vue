@@ -60,4 +60,11 @@ a {
   margin: 0 4vw;
   min-height: calc(100vh - 7rem); /* minus header height */
 }
+@media screen and (min-width:781px) {
+  .content {
+    width: 60%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
 </style>

@@ -39,4 +39,11 @@ export default {
     margin: 0 auto 1rem;
   }
 }
+@media screen and (min-width:781px) {
+  .footer /deep/ .sns-list {
+    ul {
+      width: 20%;
+    }
+  }
+}
 </style>

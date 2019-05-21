@@ -23,4 +23,9 @@ export default {
 .page-content {
    margin: 2rem 0 4rem;
 }
+@media screen and (min-width:781px) {
+  .page-content {
+    margin: 4rem 0 4rem;
+  }
+}
 </style>

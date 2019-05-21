@@ -41,6 +41,35 @@ export default {
     background-color: #2c3e50;
     opacity: .9;
     box-shadow: 1px 1px 1px 1px rgba(0,0,0,.5);
+    a {
+      display: block;
+      height: inherit;
+    }
+  }
+  @media screen and (min-width:781px) {
+    .menu-list {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .menu-list-item {
+      margin: 0;
+      width: 28%;
+      height: 10vh;
+      line-height: 10vh;
+      &:nth-child(n + 4) {
+        margin-top: 1rem;
+      }
+      &:nth-child(4) {
+        margin-left: 16%;
+      }
+      &:nth-child(5) {
+        margin-right: 16%;
+      }
+      &:hover {
+        opacity: .8;
+      }
+    }
   }
 }
 </style>

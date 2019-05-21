@@ -138,4 +138,9 @@ form {
     display: inline;
   }
 }
+@media screen and (min-width:781px) {
+  .submit-button {
+    width: 60%;
+  }
+}
 </style>

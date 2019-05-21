@@ -190,7 +190,13 @@ export default {
     height: 1.8rem;
   }
 }
-
+@media screen and (min-width:781px) {
+  .header /deep/ .sns-list {
+    ul {
+      width: 25%;
+    }
+  }
+}
 
 // animation
 @keyframes RightToLeft {
