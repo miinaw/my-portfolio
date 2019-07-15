@@ -12,12 +12,11 @@
       <loading v-show="loading"/>
       <div v-show="!loading">
         <a :href="MyPageData.html_url" target="_blank" class="visit-button">Visit</a>
-        <div>
-          <a 
-          v-for="item in repositoriesCount" :key="item.key" 
+        <div v-for="item in repositoriesCount" :key="item.key" class="repository-list">
+          <a v-if="item.private===false"
           v-bind:href="item.html_url"
           target="_blank"
-          class="repository-list"
+          class="repository-item"
           >
             <div class="title">{{ item.name }}</div>
             <div class="description">{{ item.description }}</div>
@@ -87,16 +86,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-.repository-list {
+.repository-list + .repository-list {
+  margin-top: 1rem;
+}
+.repository-item {
   display: block;
   padding: 1.2rem 1rem;
   border: 1px solid #ddd;
   background-color: #f6f6f6;
   box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.04);
-  & + .repository-list {
-    margin-top: 1rem;
-  }
 }
 .title {
   margin-bottom: 1.4rem;
