@@ -23,7 +23,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -55,6 +55,9 @@ input {
 a {
   text-decoration: none;
   color: inherit;
+  &:hover {
+    opacity: .7;
+  }
 }
 .content {
   margin: 0 4vw;
