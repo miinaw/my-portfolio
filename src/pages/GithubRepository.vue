@@ -155,7 +155,7 @@ export default {
 }
 .grass {
   img {
-    width: calc(100vw - 8vw);
+    width: calc(100% - 2vw);
     margin: 1rem auto;
   }
 }
