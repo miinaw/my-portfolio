@@ -118,7 +118,6 @@ p + .heading {
   display: grid;
   grid-gap: 2vw;
   grid-template-columns: repeat(3,29vw);
-  grid-template-rows: repeat(3,29vw);
   justify-content: space-around;
 }
 a.post {
@@ -127,6 +126,11 @@ a.post {
     width: 100%;
     height: 100%;
     object-fit: contain;
+  }
+}
+@media screen and (min-width:781px) {
+  .instagram {
+    grid-template-columns: repeat(3,30%);
   }
 }
 </style>
