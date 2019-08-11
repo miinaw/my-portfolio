@@ -60,12 +60,6 @@ export default {
       &:nth-child(n + 4) {
         margin-top: 1rem;
       }
-      &:nth-child(4) {
-        margin-left: 16%;
-      }
-      &:nth-child(5) {
-        margin-right: 16%;
-      }
       &:hover {
         opacity: .8;
       }
