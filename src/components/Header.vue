@@ -165,6 +165,9 @@ export default {
     &.rakugaki::before {
       background-image: url('../assets/images/icons/palette.svg');
     }
+    &.beauty::before {
+      background-image: url('../assets/images/icons/lipstick.svg');
+    }
     &.contact::before {
       background-image: url('../assets/images/icons/mail.svg');
     }
