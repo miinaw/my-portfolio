@@ -15,8 +15,12 @@ export const MENU_LIST = [
      id: 3,
      name: "rakugaki"
    },
+   {
+     id: 4,
+     name: "beauty",
+   },
   { 
-    id: 4,
+    id: 5,
     name: "contact",
    },
 ];

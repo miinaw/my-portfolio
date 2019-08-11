@@ -8,6 +8,7 @@ import About from './pages/About.vue'
 import GithubRepository from './pages/GithubRepository.vue'
 import Qiita from './pages/Qiita.vue'
 import Rakugaki from './pages/Rakugaki.vue'
+import Beauty from './pages/Beauty.vue'
 import Contact from './pages/Contact.vue'
 
 export default new VueRouter({
@@ -32,6 +33,10 @@ export default new VueRouter({
     {
       path: '/rakugaki',
       component: Rakugaki
+    },
+    {
+      path: '/beauty',
+      component: Beauty
     },
     {
       path: '/contact',
