@@ -1,7 +1,7 @@
 <template>
   <PageBase pagename="beauty">
     <template v-slot:logo>
-      <Logo href="https://www.instagram.com/miina016/" target="_blank" :src="allPosts.data[0].user.profile_picture"/>
+      <Logo href="https://www.instagram.com/miina016/" target="_blank" :src="setAccountData"/>
     </template>
     
     <template v-slot="title">
@@ -11,12 +11,12 @@
     <template v-slot:content>
       <div class="instagram">
         <a 
-        v-for="post in selectData" 
+        v-for="post in selectPost" 
         v-bind:key="post.key" 
-        v-bind:href="post.link"
+        v-bind:href="post.permalink"
         class="post"
         >
-        <img v-bind:src="post.images.standard_resolution.url">
+        <img v-bind:src="post.media_url">
         </a>
       </div>
     </template>
@@ -38,15 +38,16 @@ export default {
   },
   data() {
     return {
-      accountData: {},
+      accountData: { pictureUrl: ''},
       allPosts: {},
       selectPosts: []
     }
   },
   methods: {
     getPost() {
-      const access_token = process.env.VUE_APP_INSTAGRAM_ACCESS_TOKEN
-      axios.get('https://api.instagram.com/v1/users/self/media/recent/?access_token=' + access_token + '&count=150')
+      const access_token = process.env.VUE_APP_INSTAGRAM_3RD_ACCESS_TOKEN
+      const ig_id = process.env.VUE_APP_IG_ID
+      axios.get('https://graph.facebook.com/v4.0/' + ig_id + '?fields=profile_picture_url,name%2Cmedia.limit(600)%7Bcaption%2Clike_count%2Cmedia_url%2Cpermalink%2Ctimestamp%2Cusername%7D&access_token=' + access_token)
       .then(response => (this.allPosts = response.data))
     }
   },
@@ -54,12 +55,15 @@ export default {
     this.getPost()
   },
   computed: {
-    selectData() {
-      for (var i = 0; i < this.allPosts.data.length; i++) {
-        for (var j = 0; j < this.allPosts.data[i].tags.length; j++) {
-          if(this.allPosts.data[i].tags[j] === 'minabeauty') {
-            this.selectPosts.push(this.allPosts.data[i])
-          }
+    setAccountData() {
+      return this.accountData.pictureUrl = this.allPosts.profile_picture_url
+    },
+    selectPost() {
+      console.log(this.allPosts.media.data.length)
+      console.log(this.allPosts.profile_picture_url)
+      for (var i = 0; i < this.allPosts.media.data.length; i++) {
+        if(this.allPosts.media.data[i].caption.indexOf('minabeauty') != -1) {
+          this.selectPosts.push(this.allPosts.media.data[i])
         }
       }
       return this.selectPosts
